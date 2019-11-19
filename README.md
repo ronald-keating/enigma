@@ -7,6 +7,7 @@ to show how Enigma works through C implementation.
 plugboard.txt
 Format (from start of file):
 A B C D E F G H I J
+
 K L M N O P Q R S T
 
 enigma.c
