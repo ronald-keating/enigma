@@ -1,5 +1,5 @@
-    Ronald Keating
-    MATH 415
+Ronald Keating\n
+MATH 415
 
 Note: Only use uppercase values for this. Could implement lowercase, but just wanted
 to show how Enigma works through C implementation.
