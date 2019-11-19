@@ -1,4 +1,5 @@
-Ronald Keating_
+Ronald Keating
+
 MATH 415
 
 Note: Only use uppercase values for this. Could implement lowercase, but just wanted
