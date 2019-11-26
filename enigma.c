@@ -117,9 +117,9 @@ void iterateRotors(struct rotors *rotor, int i)                 //increments rot
     inc_rotor(rotor[i].alpha);
     if(rotor[i].start == 26)
     {   
-        i++; 
         rotor[i].start = 0;
-        if(i == 2)
+        i++;
+        if(i == 3)
             return;
         iterateRotors(rotor, i++);                              //recursion
     }
