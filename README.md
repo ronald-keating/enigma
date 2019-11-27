@@ -1,17 +1,15 @@
-Ronald Keating
-
-MATH 415
+# Ronald Keating for MATH 415
 
 Note: Only use uppercase values for this. Could implement lowercase, but just wanted
 to show how Enigma works through C implementation.
 
-plugboard.txt
+## plugboard.txt
 Format (from start of file):
 
     A B C D E F G H I J
     K L M N O P Q R S T
 
-enigma.c
+## enigma.c
 This is an Enigma program that simulates how the actual Enigma machine works.
 Given an input, the characters are sent through a plugboard swap and then to
 the rotors. From here the rotors take the value of the character, subtract 65
