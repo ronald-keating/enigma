@@ -21,17 +21,5 @@ essentially swaps values with. From here, the program works backwords, finding
 the value of C given the array value. This then searches for the letter value of 
 the previous rotor.
 
-Looks something like:
-
-    plugboard function on input_char
-    where rotor1 = input_char
-    value at rotor2 where input_char - 65
-    input_char = character at rotor2[input_char - 65]
-    value at rotor3 where input_char - 65
-    input_char = character at rotor3[input_char - 65]
-    value at reflector where input_char - 65
-    input_char = character at reflector[input_char - 65]
-    input_char = swap_reflector_characters
-
-And then work backwards to find rotor1 value, which is then passed through
-the plugboard function
+## overview of how it works
+So the user enters some character, c, into the program (actually enters a string, but other than the rotors interating, there is no change on how the letters are encrypted/decrypted). We take the value of c (which is uppercase and A=65 in decimal) so we subtract 65 from our letter c, and in this case, set it equal to some temporary integer temp. This gives us a temp value between 0-25, which is exactly our array sizes. So we begin with array 1, or rotor 1 (we are calling it rotor 1 because it is the first rotor in this process, not the randomly chosen rotor by the user). So now, we can set c = array1[temp] (or rotor1[temp]). These character arrays are random, so you can begin to see how this will work throughout the rotors. Again, we take temp=c-65, giving us a number between 0-25. We will set c=array2[temp], and then repeat the process for the third array. For the reflector, we will just treat it like a previous array, setting c=reflector[temp]. For the actual reflection part, we have two separate "half" arrays. These numbers are the pairing set for the reflector (this was done in order to create randomization, eliminating a mathmatical function which could easily be broken in that case). So the character that we get from the reflector, we scan for it in the "half" arrays. If it is in "half" array1, then c equals whatever value is in the SAME location as "half" array2, and vice-versa. From here, we scan for wherever c is in reflector, and so now we are in some location in the reflector. From here we must work backwards. Instead of finding c-65 and receving our next location, we must scan the next array based off our current location. So lets say that we are in reflector position 2. Then we ADD 65 to two and search in teh next array where the letter C is (since C=65+2 in decimal). Do this all the way back to array1/rotor1, and we have completed enigma. Oh, and the plugboard is a simple swap function that happens before and after the rotor process I just explained.
